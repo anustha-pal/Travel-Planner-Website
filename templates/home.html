@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="{{ url_for('add_plan') }}" method="post">
+        <label>Destination:</label><br>
+        <input type="text" name="destination" required><br>
+        
+        <label>Start Date:</label><br>
+        <input type="date" name="start_date" required><br>
+
+        <label>End Date:</label><br>
+        <input type="date" name="end_date" required><br>
+
+        <label>Activities:</label><br>
+        <textarea name="activities" required></textarea><br><br>
+
+        <input type="submit" value="Save Plan">
+    </form>
+    <br>
+    <a href="{{ url_for('view_plans') }}">View Travel Plans</a>
+{% endblock %}

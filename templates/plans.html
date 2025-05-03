@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Saved Travel Plans</h2>
+    {% if plans %}
+        <ul>
+        {% for plan in plans %}
+            <li>
+                <strong>{{ plan.destination }}</strong><br>
+                Dates: {{ plan.start_date }} to {{ plan.end_date }}<br>
+                Activities: {{ plan.activities }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No travel plans yet.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Back</a>
+{% endblock %}
